@@ -1,0 +1,27 @@
+
+TEST:
+...
+    |    MAE |    MSE |   RMSE |    AUC |  F1@10 | F1@100 |    MAP |    MRR | NCRR@10 | NCRR@100 | NDCG@10 | NDCG@100 | Precision@10 | Precision@100 | Recall@10 | Recall@100 | Activation@10 | Activation@100 | AltVoices_mainstream@10 | AltVoices_mainstream@100 | Calibration_category@10 | Calibration_category@100 | Calibration_complexity@10 | Calibration_complexity@100 | EILD@10 | EILD@100 | Fragmentation@10 | Fragmentation@100 | GiniCoeff@10 | GiniCoeff@100 | ILD@10 | ILD@100 | NDCG_score@10 | NDCG_score@100 | Representation@10 | Representation@100 | Train (s) |  Test (s)
+--- + ------ + ------ + ------ + ------ + ------ + ------ + ------ + ------ + ------- + -------- + ------- + -------- + ------------ + ------------- + --------- + ---------- + ------------- + -------------- + ----------------------- + ------------------------ + ----------------------- + ------------------------ + ------------------------- + -------------------------- + ------- + -------- + ---------------- + ----------------- + ------------ + ------------- + ------ + ------- + ------------- + -------------- + ----------------- + ------------------ + --------- + ---------
+HFT | 0.0884 | 0.0426 | 0.1542 | 0.7807 | 0.0006 | 0.0017 | 0.0024 | 0.0055 |  0.0008 |   0.0015 |  0.0009 |   0.0053 |       0.0007 |        0.0010 |    0.0010 |     0.0164 |        0.3030 |         0.1220 |                  0.0230 |                   0.0377 |                  0.7008 |                   0.5907 |                    0.3798 |                     0.2948 |  0.9259 |   0.8869 |           0.3286 |            0.3140 |       0.6836 |        0.5150 | 0.9375 |  0.9049 |        0.0031 |         0.0178 |            0.6562 |             0.5318 | 5760.1737 | 8673.7986
+
+Number of Users in Diversity Metric Evaluation
+    | Activation@10 | Activation@100 | AltVoices_mainstream@10 | AltVoices_mainstream@100 | Calibration_category@10 | Calibration_category@100 | Calibration_complexity@10 | Calibration_complexity@100 | EILD@10 | EILD@100 | Fragmentation@10 | Fragmentation@100 | GiniCoeff@10 | GiniCoeff@100 | ILD@10 | ILD@100 | NDCG_score@10 | NDCG_score@100 | Representation@10 | Representation@100 | total_user_number
+--- + ------------- + -------------- + ----------------------- + ------------------------ + ----------------------- + ------------------------ + ------------------------- + -------------------------- + ------- + -------- + ---------------- + ----------------- + ------------ + ------------- + ------ + ------- + ------------- + -------------- + ----------------- + ------------------ + -----------------
+HFT |         17739 |          17739 |                   17739 |                    17739 |                   17670 |                    17670 |                     17634 |                      17634 |   17739 |    17739 |            17739 |             17739 |        17739 |         17739 |  17739 |   17739 |         17739 |          17739 |             17739 |              17739 |             19663
+
+Hyper-parameters
+    |   k
+--- + ---
+HFT | 100
+
+RE-RANKING:
+...
+    |  F1@10 | NCRR@10 | NDCG@10 | Precision@10 | Recall@10 | Activation@10 | AltVoices_mainstream@10 | Calibration_category@10 | Calibration_complexity@10 | EILD@10 | Fragmentation@10 | GiniCoeff@10 | ILD@10 | NDCG_score@10 | Representation@10 | Re-rank Time (s)
+--- + ------ + ------- + ------- + ------------ + --------- + ------------- + ----------------------- + ----------------------- + ------------------------- + ------- + ---------------- + ------------ + ------ + ------------- + ----------------- + ----------------
+HFT | 0.0006 |  0.0008 |  0.0009 |       0.0007 |    0.0010 |        0.3025 |                  0.0231 |                  0.7012 |                    0.3794 |  0.9257 |           0.3391 |       0.6845 | 0.9371 |        0.0031 |            0.6555 |        2605.4114
+
+Rerank-parameters
+    | rerank |  k | lambda_constant | diversity_objective
+--- + ------ + -- + --------------- + -------------------
+HFT |     10 | 50 |             1.0 |       Fragmentation

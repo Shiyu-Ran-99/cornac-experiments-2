@@ -1,0 +1,27 @@
+
+TEST:
+...
+    |    MAE |    MSE |   RMSE |    AUC |  F1@10 | F1@100 |    MAP |    MRR | NCRR@10 | NCRR@100 | NDCG@10 | NDCG@100 | Precision@10 | Precision@100 | Recall@10 | Recall@100 | Activation@10 | Activation@100 | AltVoices_mainstream@10 | AltVoices_mainstream@100 | Calibration_category@10 | Calibration_category@100 | Calibration_complexity@10 | Calibration_complexity@100 | EILD@10 | EILD@100 | Fragmentation@10 | Fragmentation@100 | GiniCoeff@10 | GiniCoeff@100 | ILD@10 | ILD@100 | NDCG_score@10 | NDCG_score@100 | Representation@10 | Representation@100 | Train (s) |  Test (s)
+--- + ------ + ------ + ------ + ------ + ------ + ------ + ------ + ------ + ------- + -------- + ------- + -------- + ------------ + ------------- + --------- + ---------- + ------------- + -------------- + ----------------------- + ------------------------ + ----------------------- + ------------------------ + ------------------------- + -------------------------- + ------- + -------- + ---------------- + ----------------- + ------------ + ------------- + ------ + ------- + ------------- + -------------- + ----------------- + ------------------ + --------- + ---------
+CTR | 0.4033 | 0.3568 | 0.5418 | 0.5625 | 0.0007 | 0.0035 | 0.0026 | 0.0081 |  0.0010 |   0.0026 |  0.0012 |   0.0113 |       0.0009 |        0.0019 |    0.0014 |     0.0384 |        0.2968 |         0.0938 |                  0.1184 |                   0.0999 |                  0.3329 |                   0.4430 |                    0.2052 |                     0.2220 |  0.8060 |   0.7837 |           0.8492 |            0.6248 |       0.8088 |        0.6203 | 0.8095 |  0.8555 |        0.0039 |         0.0326 |            0.6092 |             0.4595 |  200.6647 | 5622.9915
+
+Number of Users in Diversity Metric Evaluation
+    | Activation@10 | Activation@100 | AltVoices_mainstream@10 | AltVoices_mainstream@100 | Calibration_category@10 | Calibration_category@100 | Calibration_complexity@10 | Calibration_complexity@100 | EILD@10 | EILD@100 | Fragmentation@10 | Fragmentation@100 | GiniCoeff@10 | GiniCoeff@100 | ILD@10 | ILD@100 | NDCG_score@10 | NDCG_score@100 | Representation@10 | Representation@100 | total_user_number
+--- + ------------- + -------------- + ----------------------- + ------------------------ + ----------------------- + ------------------------ + ------------------------- + -------------------------- + ------- + -------- + ---------------- + ----------------- + ------------ + ------------- + ------ + ------- + ------------- + -------------- + ----------------- + ------------------ + -----------------
+CTR |         17739 |          17739 |                   17739 |                    17739 |                   17670 |                    17670 |                     17634 |                      17634 |   17739 |    17739 |            17739 |             17739 |        17739 |         17739 |  17739 |   17739 |         17739 |          17739 |             16208 |              17739 |             19663
+
+Hyper-parameters
+    |   k | lambda_u | lambda_v
+--- + --- + -------- + --------
+CTR | 400 |     0.01 |     0.01
+
+RE-RANKING:
+...
+    |  F1@10 | NCRR@10 | NDCG@10 | Precision@10 | Recall@10 | Activation@10 | AltVoices_mainstream@10 | Calibration_category@10 | Calibration_complexity@10 | EILD@10 | Fragmentation@10 | GiniCoeff@10 | ILD@10 | NDCG_score@10 | Representation@10 | Re-rank Time (s)
+--- + ------ + ------- + ------- + ------------ + --------- + ------------- + ----------------------- + ----------------------- + ------------------------- + ------- + ---------------- + ------------ + ------ + ------------- + ----------------- + ----------------
+CTR | 0.0021 |  0.0028 |  0.0033 |       0.0017 |    0.0043 |        0.2968 |                  0.1178 |                  0.9322 |                    0.3645 |  0.8336 |           0.8797 |       0.7962 | 0.8415 |        0.0083 |            0.6332 |        2442.7777
+
+Rerank-parameters
+    | rerank |  k | lambda_constant |  diversity_objective
+--- + ------ + -- + --------------- + --------------------
+CTR |     10 | 50 |               0 | Calibration_category

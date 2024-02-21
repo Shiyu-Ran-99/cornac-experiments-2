@@ -1,0 +1,27 @@
+
+TEST:
+...
+    |    MAE |    MSE |   RMSE |    AUC |  F1@10 | F1@100 |    MAP |    MRR | NCRR@10 | NCRR@100 | NDCG@10 | NDCG@100 | Precision@10 | Precision@100 | Recall@10 | Recall@100 | Activation@10 | Activation@100 | AltVoices_mainstream@10 | AltVoices_mainstream@100 | Calibration_category@10 | Calibration_category@100 | Calibration_complexity@10 | Calibration_complexity@100 | EILD@10 | EILD@100 | Fragmentation@10 | Fragmentation@100 | GiniCoeff@10 | GiniCoeff@100 | ILD@10 | ILD@100 | NDCG_score@10 | NDCG_score@100 | Representation@10 | Representation@100 | Train (s) |  Test (s)
+--- + ------ + ------ + ------ + ------ + ------ + ------ + ------ + ------ + ------- + -------- + ------- + -------- + ------------ + ------------- + --------- + ---------- + ------------- + -------------- + ----------------------- + ------------------------ + ----------------------- + ------------------------ + ------------------------- + -------------------------- + ------- + -------- + ---------------- + ----------------- + ------------ + ------------- + ------ + ------- + ------------- + -------------- + ----------------- + ------------------ + --------- + ---------
+DAE | 0.6522 | 0.6446 | 0.7663 | 0.9242 | 0.0189 | 0.0150 | 0.0244 | 0.0573 |  0.0236 |   0.0315 |  0.0301 |   0.0709 |       0.0146 |        0.0082 |    0.0462 |     0.1914 |        0.3235 |         0.0838 |                  0.0994 |                   0.0818 |                  0.6234 |                   0.4993 |                    0.3746 |                     0.2604 |  0.8249 |   0.7317 |           0.7157 |            0.5800 |       0.7587 |        0.6105 | 0.8567 |  0.8457 |        0.0658 |         0.1386 |            0.5871 |             0.4534 |  307.0829 | 9018.4522
+
+Number of Users in Diversity Metric Evaluation
+    | Activation@10 | Activation@100 | AltVoices_mainstream@10 | AltVoices_mainstream@100 | Calibration_category@10 | Calibration_category@100 | Calibration_complexity@10 | Calibration_complexity@100 | EILD@10 | EILD@100 | Fragmentation@10 | Fragmentation@100 | GiniCoeff@10 | GiniCoeff@100 | ILD@10 | ILD@100 | NDCG_score@10 | NDCG_score@100 | Representation@10 | Representation@100 | total_user_number
+--- + ------------- + -------------- + ----------------------- + ------------------------ + ----------------------- + ------------------------ + ------------------------- + -------------------------- + ------- + -------- + ---------------- + ----------------- + ------------ + ------------- + ------ + ------- + ------------- + -------------- + ----------------- + ------------------ + -----------------
+DAE |         17739 |          17739 |                   17739 |                    17739 |                   17670 |                    17670 |                     17634 |                      17634 |   17739 |    17739 |            17739 |             17739 |        17739 |         17739 |  17739 |   17739 |         17739 |          17739 |             17145 |              17739 |             19663
+
+Hyper-parameters
+    | qk_dims
+--- + -------
+DAE |      20
+
+RE-RANKING:
+...
+    |  F1@10 | NCRR@10 | NDCG@10 | Precision@10 | Recall@10 | Activation@10 | AltVoices_mainstream@10 | Calibration_category@10 | Calibration_complexity@10 | EILD@10 | Fragmentation@10 | GiniCoeff@10 | ILD@10 | NDCG_score@10 | Representation@10 | Re-rank Time (s)
+--- + ------ + ------- + ------- + ------------ + --------- + ------------- + ----------------------- + ----------------------- + ------------------------- + ------- + ---------------- + ------------ + ------ + ------------- + ----------------- + ----------------
+DAE | 0.0140 |  0.0182 |  0.0221 |       0.0113 |    0.0317 |        0.3192 |                  0.0949 |                  0.6747 |                    0.3574 |  0.8221 |           0.9934 |       0.7747 | 0.8470 |        0.0514 |            0.6156 |        3067.1774
+
+Rerank-parameters
+    | rerank |  k | lambda_constant | diversity_objective
+--- + ------ + -- + --------------- + -------------------
+DAE |     10 | 50 |               0 |       Fragmentation

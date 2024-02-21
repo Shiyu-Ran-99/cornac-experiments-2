@@ -1,0 +1,27 @@
+
+TEST:
+...
+    | Calibration_category@10 | Train (s) | Test (s)
+--- + ----------------------- + --------- + --------
+CTR |                  0.3329 |  191.5330 | 195.1163
+
+Number of Users in Diversity Metric Evaluation
+    | Calibration_category@10 | total_user_number
+--- + ----------------------- + -----------------
+CTR |                   17670 |             19663
+
+Hyper-parameters
+    |   k | lambda_u | lambda_v
+--- + --- + -------- + --------
+CTR | 400 |     0.01 |     0.01
+
+RE-RANKING:
+...
+    | Calibration_category@10 | Re-rank Time (s)
+--- + ----------------------- + ----------------
+CTR |                  0.7584 |        1465.4100
+
+Rerank-parameters
+    | rerank |  k | lambda_constant |  diversity_objective
+--- + ------ + -- + --------------- + --------------------
+CTR |     10 | 50 |             0.5 | Calibration_category

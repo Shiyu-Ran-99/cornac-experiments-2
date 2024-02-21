@@ -1,0 +1,27 @@
+
+TEST:
+...
+    |    MAE |    MSE |   RMSE |    AUC |  F1@10 | F1@100 |    MAP |    MRR | NCRR@10 | NCRR@100 | NDCG@10 | NDCG@100 | Precision@10 | Precision@100 | Recall@10 | Recall@100 | Activation@10 | Activation@100 | AltVoices_mainstream@10 | AltVoices_mainstream@100 | Calibration_category@10 | Calibration_category@100 | Calibration_complexity@10 | Calibration_complexity@100 | EILD@10 | EILD@100 | Fragmentation@10 | Fragmentation@100 | GiniCoeff@10 | GiniCoeff@100 | ILD@10 | ILD@100 | NDCG_score@10 | NDCG_score@100 | Representation@10 | Representation@100 |  Train (s) |   Test (s)
+--- + ------ + ------ + ------ + ------ + ------ + ------ + ------ + ------ + ------- + -------- + ------- + -------- + ------------ + ------------- + --------- + ---------- + ------------- + -------------- + ----------------------- + ------------------------ + ----------------------- + ------------------------ + ------------------------- + -------------------------- + ------- + -------- + ---------------- + ----------------- + ------------ + ------------- + ------ + ------- + ------------- + -------------- + ----------------- + ------------------ + ---------- + ----------
+HFT | 0.0877 | 0.0426 | 0.1537 | 0.7796 | 0.0032 | 0.0022 | 0.0071 | 0.0278 |  0.0108 |   0.0112 |  0.0086 |   0.0128 |       0.0029 |        0.0012 |    0.0057 |     0.0216 |        0.3134 |         0.1090 |                  0.0198 |                   0.0461 |                  0.7164 |                   0.5896 |                    0.3830 |                     0.2833 |  0.9203 |   0.8816 |           0.3471 |            0.3227 |       0.7043 |        0.5025 | 0.9273 |  0.9078 |        0.0252 |         0.0395 |            0.6765 |             0.5130 | 30852.8839 | 22422.3666
+
+Number of Users in Diversity Metric Evaluation
+    | Activation@10 | Activation@100 | AltVoices_mainstream@10 | AltVoices_mainstream@100 | Calibration_category@10 | Calibration_category@100 | Calibration_complexity@10 | Calibration_complexity@100 | EILD@10 | EILD@100 | Fragmentation@10 | Fragmentation@100 | GiniCoeff@10 | GiniCoeff@100 | ILD@10 | ILD@100 | NDCG_score@10 | NDCG_score@100 | Representation@10 | Representation@100 | total_user_number
+--- + ------------- + -------------- + ----------------------- + ------------------------ + ----------------------- + ------------------------ + ------------------------- + -------------------------- + ------- + -------- + ---------------- + ----------------- + ------------ + ------------- + ------ + ------- + ------------- + -------------- + ----------------- + ------------------ + -----------------
+HFT |         17739 |          17739 |                   17739 |                    17739 |                   17670 |                    17670 |                     17634 |                      17634 |   17739 |    17739 |            17739 |             17739 |        17739 |         17739 |  17739 |   17739 |         17739 |          17739 |             17739 |              17739 |             19663
+
+Hyper-parameters
+    |   k
+--- + ---
+HFT | 100
+
+RE-RANKING:
+...
+    |  F1@10 | NCRR@10 | NDCG@10 | Precision@10 | Recall@10 | Activation@10 | AltVoices_mainstream@10 | Calibration_category@10 | Calibration_complexity@10 | EILD@10 | Fragmentation@10 | GiniCoeff@10 | ILD@10 | NDCG_score@10 | Representation@10 | Re-rank Time (s)
+--- + ------ + ------- + ------- + ------------ + --------- + ------------- + ----------------------- + ----------------------- + ------------------------- + ------- + ---------------- + ------------ + ------ + ------------- + ----------------- + ----------------
+HFT | 0.0015 |  0.0030 |  0.0029 |       0.0013 |    0.0030 |        0.3032 |                  0.0982 |                  0.9860 |                    0.3713 |  0.7778 |           0.5819 |       0.8376 | 0.7928 |        0.0075 |            0.6827 |        6732.3976
+
+Rerank-parameters
+    | rerank |  k | lambda_constant |  diversity_objective
+--- + ------ + -- + --------------- + --------------------
+HFT |     10 | 50 |               0 | Calibration_category

@@ -1,0 +1,27 @@
+
+TEST:
+...
+    |    MAE |    MSE |   RMSE |    AUC |  F1@10 | F1@100 |    MAP |    MRR | NCRR@10 | NCRR@100 | NDCG@10 | NDCG@100 | Precision@10 | Precision@100 | Recall@10 | Recall@100 | Activation@10 | Activation@100 | AltVoices_mainstream@10 | AltVoices_mainstream@100 | Calibration_category@10 | Calibration_category@100 | Calibration_complexity@10 | Calibration_complexity@100 | EILD@10 | EILD@100 | Fragmentation@10 | Fragmentation@100 | GiniCoeff@10 | GiniCoeff@100 | ILD@10 | ILD@100 | NDCG_score@10 | NDCG_score@100 | Representation@10 | Representation@100 |  Train (s) |   Test (s)
+--- + ------ + ------ + ------ + ------ + ------ + ------ + ------ + ------ + ------- + -------- + ------- + -------- + ------------ + ------------- + --------- + ---------- + ------------- + -------------- + ----------------------- + ------------------------ + ----------------------- + ------------------------ + ------------------------- + -------------------------- + ------- + -------- + ---------------- + ----------------- + ------------ + ------------- + ------ + ------- + ------------- + -------------- + ----------------- + ------------------ + ---------- + ----------
+HFT | 0.0869 | 0.0425 | 0.1529 | 0.7784 | 0.0032 | 0.0018 | 0.0066 | 0.0260 |  0.0102 |   0.0103 |  0.0083 |   0.0110 |       0.0028 |        0.0010 |    0.0057 |     0.0166 |        0.3214 |         0.0960 |                  0.0334 |                   0.0464 |                  0.7108 |                   0.5875 |                    0.3811 |                     0.2827 |  0.9186 |   0.8888 |           0.3207 |            0.3283 |       0.7092 |        0.5118 | 0.9259 |  0.9065 |        0.0243 |         0.0347 |            0.6481 |             0.5121 | 11931.5745 | 23390.1771
+
+Number of Users in Diversity Metric Evaluation
+    | Activation@10 | Activation@100 | AltVoices_mainstream@10 | AltVoices_mainstream@100 | Calibration_category@10 | Calibration_category@100 | Calibration_complexity@10 | Calibration_complexity@100 | EILD@10 | EILD@100 | Fragmentation@10 | Fragmentation@100 | GiniCoeff@10 | GiniCoeff@100 | ILD@10 | ILD@100 | NDCG_score@10 | NDCG_score@100 | Representation@10 | Representation@100 | total_user_number
+--- + ------------- + -------------- + ----------------------- + ------------------------ + ----------------------- + ------------------------ + ------------------------- + -------------------------- + ------- + -------- + ---------------- + ----------------- + ------------ + ------------- + ------ + ------- + ------------- + -------------- + ----------------- + ------------------ + -----------------
+HFT |         17739 |          17739 |                   17739 |                    17739 |                   17670 |                    17670 |                     17634 |                      17634 |   17739 |    17739 |            17739 |             17739 |        17739 |         17739 |  17739 |   17739 |         17739 |          17739 |             17739 |              17739 |             19663
+
+Hyper-parameters
+    |   k
+--- + ---
+HFT | 100
+
+RE-RANKING:
+...
+    |  F1@10 | NCRR@10 | NDCG@10 | Precision@10 | Recall@10 | Activation@10 | AltVoices_mainstream@10 | Calibration_category@10 | Calibration_complexity@10 | EILD@10 | Fragmentation@10 | GiniCoeff@10 | ILD@10 | NDCG_score@10 | Representation@10 | Re-rank Time (s)
+--- + ------ + ------- + ------- + ------------ + --------- + ------------- + ----------------------- + ----------------------- + ------------------------- + ------- + ---------------- + ------------ + ------ + ------------- + ----------------- + ----------------
+HFT | 0.0007 |  0.0009 |  0.0010 |       0.0006 |    0.0012 |        0.2628 |                  0.6155 |                  0.6981 |                    0.3524 |  0.9233 |           0.6270 |       0.6790 | 0.9246 |        0.0030 |            0.5486 |      279083.4168
+
+Rerank-parameters
+    | rerank |  k | lambda_constant |  diversity_objective
+--- + ------ + -- + --------------- + --------------------
+HFT |     10 | 50 |               0 | AltVoices_mainstream
